@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+      background-image: url('https://www.hdwallpapers.in/download/purple_plain_background_hd_purple-1366x768.jpg');
+            background-size: cover;
+
+        }
+        
+
+        h1 {
+            text-align: center;
+            margin-top: 100px;
+            color: #efeaea;
+            font-family: 'Times New Roman', Times, serif;
+            
+        }
+
+        form {
+            max-width: 400px;
+            margin: 10px auto;
+            padding: 20px;
+            background-color: #fbf9f9;
+            border: 5px solid #0b0a0a;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #100f0f;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            color: #007bff;
+            text-decoration: none;
+            margin-top: 10px;
+        }
+
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="submit"]:active {
+            background-color: #004080;
+        }
+
+        input[type="submit"]:focus {
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Library Management System</h1>
+    <form action="/" method="post" id="form">
+        <label for="username">USN:</label>
+        <input type="text" id="username" name="USN">
+
+        <a href="/registration" type="submit" value="New User">New User</a>
+        <br>
+
+        <a href="/frontpage" type="submit" id="Login">Login</a>
+    </form>
+    {% if message %}
+    <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>

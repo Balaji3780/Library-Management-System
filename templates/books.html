@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Books Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            border: 1px solid black;
+  padding: 25px;
+  background: url("https://cdn.dribbble.com/users/1336327/screenshots/6479217/s_2.gif");
+  background-repeat: round;
+        }
+
+        /* Books Table */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Centered container */
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+.footer {
+    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Book Details</h1>
+    </header>
+    <div class="container">
+        
+        <table>
+            <tr>
+                <th>Book ID</th>
+                <th>Book Name</th>
+                <th>Author</th>
+                <th>Number of Books Available</th>
+            </tr>
+            <tbody id="book-list">
+                <!-- Table rows will be dynamically generated here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        // Sample data for 10 books
+        const booksData = [
+            { id: 1, name: 'Operating sytems', author: 'Spiderman', available: 5 },
+            { id: 2, name: 'Python', author: 'Tom', available: 3 },
+            { id: 3, name: 'Python Applications', author: 'Jerry', available: 8 },
+            { id: 4, name: 'Digital Electronics', author: 'Shinde', available: 10 },
+            { id: 5, name: 'Analog Electronics', author: 'Chandrashekar', available: 2 },
+            { id: 6, name: 'HTML', author: 'Ben 10', available: 6 },
+            { id: 7, name: 'Java', author: 'Brendon Lincoln', available: 4 },
+            { id: 8, name: 'Punyakoti', author: 'ravishankar', available: 1 },
+            { id: 9, name: 'KGF2', author: 'Prashanth Neel', available: 7 },
+            { id: 10, name: 'Interstellar', author: 'Christopher Nolan', available: 9 }
+        ];
+
+        // Function to generate the table rows dynamically
+        function generateTableRows() {
+            const bookListElement = document.getElementById('book-list');
+            let tableRows = '';
+
+            booksData.forEach(book => {
+                tableRows += `<tr>
+                                <td>${book.id}</td>
+                                <td>${book.name}</td>
+                                <td>${book.author}</td>
+                                <td>${book.available}</td>
+                              </tr>`;
+            });
+
+            bookListElement.innerHTML = tableRows;
+        }
+
+        // Call the function to generate the table rows on page load
+        window.onload = generateTableRows;
+    </script>
+    <footer class="footer">
+        <p>&copy; 2023 Library. All rights reserved.</p>
+    </footer>
+</body>
+</html>
